@@ -1,0 +1,284 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token0",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token1",
+          "type": "address"
+        },
+        {
+          "internalType": "uint24",
+          "name": "fee",
+          "type": "uint24"
+        },
+        {
+          "internalType": "uint160",
+          "name": "sqrtPriceX96",
+          "type": "uint160"
+        }
+      ],
+      "name": "createAndInitializePoolIfNecessary",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "createAndInitializePoolIfNecessary(address,address,uint24,uint160)": "13ead562"
+  },
+  "ast": {
+    "absolutePath": "/Users/Mau/Desktop/04 Work/Solidity/hackmoney/easylp-sol/src/interfaces/IPoolInitializer.sol",
+    "id": 481,
+    "exportedSymbols": {
+      "IPoolInitializer": [
+        480
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "45:1116:8",
+    "nodes": [
+      {
+        "id": 463,
+        "nodeType": "PragmaDirective",
+        "src": "45:24:8",
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".5"
+        ]
+      },
+      {
+        "id": 464,
+        "nodeType": "PragmaDirective",
+        "src": "70:19:8",
+        "literals": [
+          "abicoder",
+          "v2"
+        ]
+      },
+      {
+        "id": 480,
+        "nodeType": "ContractDefinition",
+        "src": "285:876:8",
+        "nodes": [
+          {
+            "id": 479,
+            "nodeType": "FunctionDefinition",
+            "src": "971:188:8",
+            "documentation": {
+              "id": 466,
+              "nodeType": "StructuredDocumentation",
+              "src": "318:648:8",
+              "text": "@notice Creates a new pool if it does not exist, then initializes if not initialized\n @dev This method can be bundled with others via IMulticall for the first action (e.g. mint) performed against a pool\n @param token0 The contract address of token0 of the pool\n @param token1 The contract address of token1 of the pool\n @param fee The fee amount of the v3 pool for the specified token pair\n @param sqrtPriceX96 The initial square root price of the pool as a Q64.96 value\n @return pool Returns the pool address based on the pair of tokens and fee, will return the newly created pool address if necessary"
+            },
+            "functionSelector": "13ead562",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createAndInitializePoolIfNecessary",
+            "nameLocation": "980:34:8",
+            "parameters": {
+              "id": 475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 468,
+                  "mutability": "mutable",
+                  "name": "token0",
+                  "nameLocation": "1032:6:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "1024:14:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 467,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1024:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 470,
+                  "mutability": "mutable",
+                  "name": "token1",
+                  "nameLocation": "1056:6:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "1048:14:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 469,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1048:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 472,
+                  "mutability": "mutable",
+                  "name": "fee",
+                  "nameLocation": "1079:3:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "1072:10:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint24",
+                    "typeString": "uint24"
+                  },
+                  "typeName": {
+                    "id": 471,
+                    "name": "uint24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1072:6:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint24",
+                      "typeString": "uint24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 474,
+                  "mutability": "mutable",
+                  "name": "sqrtPriceX96",
+                  "nameLocation": "1100:12:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "1092:20:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 473,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1092:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1014:104:8"
+            },
+            "returnParameters": {
+              "id": 478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 477,
+                  "mutability": "mutable",
+                  "name": "pool",
+                  "nameLocation": "1153:4:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "1145:12:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 476,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1145:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1144:14:8"
+            },
+            "scope": 480,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IPoolInitializer",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 465,
+          "nodeType": "StructuredDocumentation",
+          "src": "91:194:8",
+          "text": "@title Creates and initializes V3 Pools\n @notice Provides a method for creating and initializing a pool, if necessary, for bundling with other methods that\n require the pool to exist."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          480
+        ],
+        "name": "IPoolInitializer",
+        "nameLocation": "295:16:8",
+        "scope": 481,
+        "usedErrors": []
+      }
+    ],
+    "license": "GPL-2.0-or-later"
+  }
+}
