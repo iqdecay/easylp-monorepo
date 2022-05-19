@@ -208,86 +208,6 @@
         }
       }
     },
-    "/Users/Mau/Desktop/04 Work/Solidity/hackmoney/easylp-sol/lib/openzeppelin-contracts/contracts/token/ERC721/Extensions/IERC721Enumerable.sol": {
-      "lastModificationDate": 1652910371983,
-      "contentHash": "f4dd06783f321aa26179bc2b6e361c29",
-      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/Extensions/IERC721Enumerable.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
-        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
-      ],
-      "versionRequirement": "^0.8.0",
-      "artifacts": {
-        "IERC721Enumerable": {
-          "0.8.14+commit.80d49f37.Darwin.appleclang": "IERC721Enumerable.sol/IERC721Enumerable.json"
-        }
-      }
-    },
-    "/Users/Mau/Desktop/04 Work/Solidity/hackmoney/easylp-sol/lib/openzeppelin-contracts/contracts/token/ERC721/Extensions/IERC721Metadata.sol": {
-      "lastModificationDate": 1652910371983,
-      "contentHash": "efbc0d15b80a74e34dbe8da0f3e879bb",
-      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/Extensions/IERC721Metadata.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs"
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
-        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
-      ],
-      "versionRequirement": "^0.8.0",
-      "artifacts": {
-        "IERC721Metadata": {
-          "0.8.14+commit.80d49f37.Darwin.appleclang": "IERC721Metadata.sol/IERC721Metadata.json"
-        }
-      }
-    },
     "/Users/Mau/Desktop/04 Work/Solidity/hackmoney/easylp-sol/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol": {
       "lastModificationDate": 1652910371980,
       "contentHash": "1551e6cba65c061bb93d057a5f000fd7",
@@ -324,6 +244,86 @@
       "artifacts": {
         "IERC721": {
           "0.8.14+commit.80d49f37.Darwin.appleclang": "IERC721.sol/IERC721.json"
+        }
+      }
+    },
+    "/Users/Mau/Desktop/04 Work/Solidity/hackmoney/easylp-sol/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
+      "lastModificationDate": 1652910371983,
+      "contentHash": "f4dd06783f321aa26179bc2b6e361c29",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721Enumerable": {
+          "0.8.14+commit.80d49f37.Darwin.appleclang": "IERC721Enumerable.sol/IERC721Enumerable.json"
+        }
+      }
+    },
+    "/Users/Mau/Desktop/04 Work/Solidity/hackmoney/easylp-sol/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1652910371983,
+      "contentHash": "efbc0d15b80a74e34dbe8da0f3e879bb",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721Metadata": {
+          "0.8.14+commit.80d49f37.Darwin.appleclang": "IERC721Metadata.sol/IERC721Metadata.json"
         }
       }
     },
@@ -442,8 +442,8 @@
       }
     },
     "/Users/Mau/Desktop/04 Work/Solidity/hackmoney/easylp-sol/src/interfaces/INonfungiblePositionManager.sol": {
-      "lastModificationDate": 1652910703713,
-      "contentHash": "029eb5ec2a0ecd34c1b544d4027e0c44",
+      "lastModificationDate": 1652950438588,
+      "contentHash": "d9e17a24846cb52dd07942602cd24e46",
       "sourceName": "src/interfaces/INonfungiblePositionManager.sol",
       "solcConfig": {
         "settings": {
@@ -471,9 +471,9 @@
         }
       },
       "imports": [
-        "lib/openzeppelin-contracts/contracts/token/ERC721/Extensions/IERC721Enumerable.sol",
-        "lib/openzeppelin-contracts/contracts/token/ERC721/Extensions/IERC721Metadata.sol",
         "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
         "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
         "src/interfaces/IERC721Permit.sol",
         "src/interfaces/IPeripheryImmutableState.sol",
@@ -600,8 +600,8 @@
       }
     },
     "/Users/Mau/Desktop/04 Work/Solidity/hackmoney/easylp-sol/src/libraries/PoolAddress.sol": {
-      "lastModificationDate": 1652911861236,
-      "contentHash": "0ede1d2569429314158fd791823e9148",
+      "lastModificationDate": 1652911921221,
+      "contentHash": "efef3744f832d9e7c98d368dc3b7aafb",
       "sourceName": "src/libraries/PoolAddress.sol",
       "solcConfig": {
         "settings": {
