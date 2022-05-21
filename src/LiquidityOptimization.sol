@@ -52,7 +52,8 @@ contract LiquidityOptimization is IERC721Receiver {
         deposits[tokenId] = Deposit({owner: owner, liquidity: liquidity, token0: token0, token1: token1});
     }
 
-    function mintNewPosition() external returns (
+    function mintNewPosition() 
+    external returns (
         uint256 tokenId,
         uint128 liquidity,
         uint256 amount0,
