@@ -17,7 +17,7 @@ contract LiquidityOptimization is IERC721Receiver {
 
     uint24 public constant poolFee = 3000;
 
-    INonfungiblePositionManager public immutable nonfungiblePositionManager;
+    INonfungiblePositionManager public immutable nonFungiblePositionManager;
 
     struct Deposit {
         address owner;
@@ -29,9 +29,9 @@ contract LiquidityOptimization is IERC721Receiver {
     mapping(uint256 => Deposit) public deposits;
 
     constructor (
-        INonfungiblePositionManager _nonfungiblePositionManager
+        INonfungiblePositionManager _nonFungiblePositionManager
     ) {
-        nonfungiblePositionManager = _nonfungiblePositionManager;
+        nonFungiblePositionManager = _nonFungiblePositionManager;
     }
 
     function onERC721Received(
@@ -41,18 +41,16 @@ contract LiquidityOptimization is IERC721Receiver {
         bytes calldata
     ) external override returns (bytes4) {
         _createDeposit(operator, tokenId);
-        
         return this.onERC721Received.selector;
     }
 
     function _createDeposit(address owner, uint256 tokenId) internal {
         (,, address token0, address token1,,,, uint128 liquidity,,,,) =
-            nonfungiblePositionManager.positions(tokenId);
-        
-        deposits[tokenId] = Deposit({owner: owner, liquidity: liquidity, token0: token0, token1: token1});
+        nonFungiblePositionManager.positions(tokenId);
+        deposits[tokenId] = Deposit({owner : owner, liquidity : liquidity, token0 : token0, token1 : token1});
     }
 
-    function mintNewPosition() 
+    function mintNewPosition()
     external returns (
         uint256 tokenId,
         uint128 liquidity,
@@ -68,8 +66,8 @@ contract LiquidityOptimization is IERC721Receiver {
         TransferHelper.safeTransferFrom(USDC, msg.sender, address(this), amount1ToMint);
 
         // Approve the position manager
-        TransferHelper.safeApprove(DAI, address(nonfungiblePositionManager), amount0ToMint);
-        TransferHelper.safeApprove(USDC, address(nonfungiblePositionManager), amount1ToMint);
+        TransferHelper.safeApprove(DAI, address(nonFungiblePositionManager), amount0ToMint);
+        TransferHelper.safeApprove(USDC, address(nonFungiblePositionManager), amount1ToMint);
 
         INonfungiblePositionManager.MintParams memory params = 
             INonfungiblePositionManager.MintParams({
@@ -88,20 +86,20 @@ contract LiquidityOptimization is IERC721Receiver {
             });
         
         // XXX - For this step to work, the pool must be created and initialized before!
-        (tokenId, liquidity, amount0, amount1) = nonfungiblePositionManager.mint(params);
+        (tokenId, liquidity, amount0, amount1) = nonFungiblePositionManager.mint(params);
 
         // Create a deposit
         _createDeposit(msg.sender, tokenId);
 
         // Remove allowance and refund in both assets.
         if (amount0 < amount0ToMint) {
-            TransferHelper.safeApprove(DAI, address(nonfungiblePositionManager), 0);
+            TransferHelper.safeApprove(DAI, address(nonFungiblePositionManager), 0);
             uint256 refund0 = amount0ToMint - amount0;
             TransferHelper.safeTransfer(DAI, msg.sender, refund0);
         }
 
         if (amount1 < amount1ToMint) {
-            TransferHelper.safeApprove(USDC, address(nonfungiblePositionManager), 0);
+            TransferHelper.safeApprove(USDC, address(nonFungiblePositionManager), 0);
             uint256 refund1 = amount1ToMint - amount1;
             TransferHelper.safeTransfer(USDC, msg.sender, refund1);
         }
@@ -123,7 +121,7 @@ contract LiquidityOptimization is IERC721Receiver {
                 amount1Min: 0,
                 deadline: block.timestamp
             });
-        (amount0, amount1) = nonfungiblePositionManager.decreaseLiquidity(params);
+        (amount0, amount1) = nonFungiblePositionManager.decreaseLiquidity(params);
 
         // send liquidity back to owner
         _sendToOwner(tokenId, amount0, amount1);
