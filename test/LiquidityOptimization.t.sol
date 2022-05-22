@@ -17,8 +17,6 @@ contract ContractTest is Test {
 
     function testMintingTokens() public {
         (uint256 tokenId, uint128 liquidity, uint256 amount0, uint256 amount1) = liquidityOptimization.mintNewPosition();
-        if liquidity > 0:
-            bool success = True;
-        assertTrue(liquidity > 0);
+        assertTrue(tokenId != 0);
     }
 }
